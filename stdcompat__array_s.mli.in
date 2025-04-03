@@ -113,12 +113,17 @@ val of_seq : 'a Stdcompat__seq.t -> 'a array
 (** @since 4.07.0: val of_seq : 'a Seq.t -> 'a array
  *)
 
+@BEGIN_FROM_5_3_0@
+external create_float : int -> float array = "caml_array_create_float"
+@END_FROM_5_3_0@
+@BEGIN_BEFORE_5_3_0@
 @BEGIN_FROM_4_03_0@
 external create_float : int -> float array = "caml_make_float_vect"
 @END_FROM_4_03_0@
 @BEGIN_BEFORE_4_03_0@
 val create_float : int -> float array
 @END_BEFORE_4_03_0@
+@END_BEFORE_5_3_0@
 (** @since 4.03.0:
     external create_float : int -> float array = "caml_make_float_vect"
  *)
@@ -152,12 +157,17 @@ external get : 'a array -> int -> 'a = "%array_safe_get"
 external set : 'a array -> int -> 'a -> unit = "%array_safe_set"
 (** Alias for {!Array.set} *)
 
+@BEGIN_FROM_5_3_0@
+external make : int -> 'a -> 'a array = "caml_array_make"
+@END_FROM_5_3_0@
+@BEGIN_BEFORE_5_3_0@
 @BEGIN_FROM_3_08_0@
 external make : int -> 'a -> 'a array = "caml_make_vect"
 @END_FROM_3_08_0@
 @BEGIN_BEFORE_3_08_0@
 external make : int -> 'a -> 'a array = "make_vect"
 @END_BEFORE_3_08_0@
+@END_BEFORE_5_3_0@
 (** @since 3.08.0: external make : int -> 'a -> 'a array = "caml_make_vect"
 @since 3.07.0: external make : int -> 'a -> 'a array = "make_vect"
  *)
