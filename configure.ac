@@ -61,29 +61,24 @@ AS_IF([test "$OCAML_RELEASE_EXTRA_PREFIX_CHAR" = "~"],
       [AC_SUBST([OCAML_DEVELOPMENT_VERSION], [[false]])])],
     [AC_SUBST([OCAML_DEVELOPMENT_VERSION], [[false]])])])
 
+AC_CHECK_TOOL([OCAMLOPT], [ocamlopt.opt], [])
+AS_IF([test "x$OCAMLOPT" = "x"],
+  [AC_CHECK_TOOL([OCAMLOPT], [ocamlopt], [])])
+AC_CHECK_TOOL([OCAMLDOC], [ocamldoc.opt], [])
+AS_IF([test "x$OCAMLDOC" = "x"],
+  [AC_CHECK_TOOL([OCAMLDOC], [ocamldoc], [])])
+AC_CHECK_TOOL([OCAMLDEP], [ocamldep.opt], [])
+AS_IF([test "x$OCAMLDEP" = "x"],
+  [AC_CHECK_TOOL([OCAMLDEP], [ocamldep], [])])
+AC_CHECK_TOOL([OCAMLMKLIB], [ocamlmklib.opt], [])
+AS_IF([test "x$OCAMLMKLIB" = "x"],
+  [AC_CHECK_TOOL([OCAMLMKLIB], [ocamlmklib], [])])
 AC_CHECK_TOOL([OCAMLFIND], [ocamlfind], [])
 AS_IF([test "x$OCAMLFIND" = "x"],
-  [AC_CHECK_TOOL([OCAMLOPT], [ocamlopt.opt], [])
-   AS_IF([test "x$OCAMLOPT" = "x"],
-     [AC_CHECK_TOOL([OCAMLOPT], [ocamlopt], [])])
-   AC_CHECK_TOOL([OCAMLDOC], [ocamldoc.opt], [])
-   AS_IF([test "x$OCAMLDOC" = "x"],
-     [AC_CHECK_TOOL([OCAMLDOC], [ocamldoc], [])])
-   AC_CHECK_TOOL([OCAMLDEP], [ocamldep.opt], [])
-   AS_IF([test "x$OCAMLDEP" = "x"],
-     [AC_CHECK_TOOL([OCAMLDEP], [ocamldep], [])])
-   AC_CHECK_TOOL([OCAMLMKLIB], [ocamlmklib.opt], [])
-   AS_IF([test "x$OCAMLMKLIB" = "x"],
-     [AC_CHECK_TOOL([OCAMLMKLIB], [ocamlmklib], [])])
-   AC_SUBST([RESULT_PKG], [])
+  [AC_SUBST([RESULT_PKG], [])
    AC_SUBST([SEQ_PKG], [])
    AC_SUBST([UCHAR_PKG], [])],
-  [AC_SUBST([OCAMLC], [["$OCAMLFIND ocamlc"]])
-   AC_SUBST([OCAMLOPT], [["$OCAMLFIND ocamlopt"]])
-   AC_SUBST([OCAMLDOC], [["$OCAMLFIND ocamldoc"]])
-   AC_SUBST([OCAMLDEP], [["$OCAMLFIND ocamldep"]])
-   AC_SUBST([OCAMLMKLIB], [["$OCAMLFIND ocamlmklib"]])
-   AC_OCAMLFIND_PKG([RESULT_PKG], [result], [Result])
+  [AC_OCAMLFIND_PKG([RESULT_PKG], [result], [Result])
    AC_OCAMLFIND_PKG([SEQ_PKG], [seq], [Seq])
    AC_OCAMLFIND_PKG([UCHAR_PKG], [uchar], [Uchar])])
 
