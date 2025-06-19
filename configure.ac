@@ -95,6 +95,8 @@ AS_IF([test "x$OCAMLOPT" = "x"],
   [AC_SUBST([OCAMLBEST], [["$OCAMLOPT"]])
    AC_SUBST([CMAX], [["cmxa"]])])
 
+AC_MSG_NOTICE([the best OCaml compiler is $OCAMLBEST])
+
 AS_IF([test "x$OCAMLDEP" = "x"],
   [AC_MSG_ERROR([[No ocamldep available]])])
 

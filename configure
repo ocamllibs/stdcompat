@@ -5003,6 +5003,9 @@ else case e in #(
 esac
 fi
 
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: the best OCaml compiler is $OCAMLBEST" >&5
+printf "%s\n" "$as_me: the best OCaml compiler is $OCAMLBEST" >&6;}
+
 if test "x$OCAMLDEP" = "x"
 then :
   as_fn_error $? "No ocamldep available" "$LINENO" 5
