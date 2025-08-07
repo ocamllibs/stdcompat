@@ -17,4 +17,4 @@ build: [
   ["dune" "runtest" "-p" name "-j" jobs] {with-test}
 ]
 dev-repo: "git+https://github.com/ocamllibs/stdcompat.git"
-version: "20.0"
+version: "21.0"
