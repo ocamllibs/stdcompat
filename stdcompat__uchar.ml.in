@@ -36,3 +36,9 @@ let bom = unsafe_of_int 0xFEFF
 
 let rep = unsafe_of_int rep'
 @END_BEFORE_4_06_0@
+
+@BEGIN_BEFORE_5_3_0@
+external seeded_hash_param :
+  int -> int -> int -> 'a -> int = "caml_hash" [@@noalloc]
+let seeded_hash seed x = seeded_hash_param 10 100 seed x
+@END_BEFORE_5_3_0@

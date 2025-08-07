@@ -79,3 +79,7 @@ let of_seq g =
   add_seq q g;
   q
 @END_BEFORE_4_07_0@
+
+@BEGIN_BEFORE_5_3_0@
+let drop q = ignore (take q)
+@END_BEFORE_5_3_0@

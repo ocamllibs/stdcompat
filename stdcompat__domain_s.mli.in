@@ -68,4 +68,7 @@ val is_main_domain : unit -> bool
 val recommended_domain_count : unit -> int
 (** @since 5.0.0: val recommended_domain_count : unit -> int *)
 
+val self_index : unit -> int
+(** @since 5.3: self_index : unit -> int *)
+
 end

@@ -313,3 +313,29 @@ let get_str_formatter () =
 let make_synchronized_formatter _ _ =
   failwith "not implemented"
 @END_BEFORE_5_0_0@
+
+@BEGIN_BEFORE_5_3_0@
+let pp_print_substring_as ~pos ~len _state _size _s =
+  let _pos = pos in
+  let _len = len in
+  failwith "Not implemented."
+
+let pp_print_substring ~pos ~len state s =
+  pp_print_substring_as ~pos ~len state len s
+
+let print_substring ~pos ~len _v =
+  let _pos = pos in
+  let _len = len in
+  failwith "Not implemented."
+(*
+  pp_print_substring  ~pos ~len (DLS.get std_formatter_key) v
+*)
+
+let print_substring_as ~pos ~len _as_len _v =
+  let _pos = pos in
+  let _len = len in
+  failwith "Not implemented."
+(*
+  pp_print_substring_as ~pos ~len (DLS.get std_formatter_key) as_len v
+*)
+@END_BEFORE_5_3_0@

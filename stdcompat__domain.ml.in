@@ -69,3 +69,7 @@ let is_main_domain () =
 let recommended_domain_count () =
   1
 @END_BEFORE_5_0_0@
+
+@BEGIN_BEFORE_5_3_0@
+let self_index () = failwith "not implemented"
+@END_BEFORE_5_3_0@

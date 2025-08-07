@@ -472,6 +472,12 @@ val open_hovbox : int -> unit
 val pp_print_string : formatter -> string -> unit
 (** Alias for {!Format.pp_print_string} *)
 
+val pp_print_substring : pos:int -> len:int -> formatter -> string -> unit
+val print_substring : pos:int -> len:int -> string -> unit
+val pp_print_substring_as :
+  pos:int -> len:int -> formatter -> int -> string -> unit
+val print_substring_as : pos:int -> len:int -> int -> string -> unit
+
 val print_string : string -> unit
 (** Alias for {!Format.print_string} *)
 

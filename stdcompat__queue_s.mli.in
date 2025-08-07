@@ -100,4 +100,6 @@ val fold : ('a -> 'b -> 'a) -> 'a -> 'b t -> 'a
 val transfer : 'a t -> 'a t -> unit
 (** Alias for {!Queue.transfer} *)
 
+val drop : 'a t -> unit
+
 end

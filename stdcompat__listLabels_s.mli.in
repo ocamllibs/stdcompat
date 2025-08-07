@@ -309,4 +309,9 @@ val fast_sort : cmp:('a -> 'a -> int) -> 'a list -> 'a list
 val merge : cmp:('a -> 'a -> int) -> 'a list -> 'a list -> 'a list
 (** Alias for {!ListLabels.merge} *)
 
+val take : int -> 'a list -> 'a list
+val drop : int -> 'a list -> 'a list
+val take_while : f:('a -> bool) -> 'a list -> 'a list
+val drop_while : f:('a -> bool) -> 'a list -> 'a list
+
 end

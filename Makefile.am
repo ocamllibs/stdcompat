@@ -45,7 +45,7 @@ MODULES = stdcompat__init.ml stdcompat__root.ml \
 	stdcompat__int_s.ml \
 	stdcompat__int64_s.ml stdcompat__int32_s.ml stdcompat__filename_s.ml \
 	stdcompat__array_s.ml stdcompat__arrayLabels_s.ml \
-	stdcompat__dynarray_s.ml \
+	stdcompat__dynarray_s.ml stdcompat__dynarray.ml \
 	stdcompat__float_s.ml stdcompat__queue_s.ml \
 	stdcompat__hashtbl.ml \
 	stdcompat__ephemeron_s.ml \

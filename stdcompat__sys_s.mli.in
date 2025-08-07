@@ -461,4 +461,12 @@ val catch_break : bool -> unit
 val ocaml_version : string
 (** Alias for {!Sys.ocaml_version} *)
 
+@BEGIN_FROM_5_3_0@
+external poll_actions : unit -> unit = "%poll"
+@END_FROM_5_3_0@
+
+@BEGIN_BEFORE_5_3_0@
+val poll_actions : unit -> unit
+@END_BEFORE_5_3_0@
+
 end
