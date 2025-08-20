@@ -30,7 +30,6 @@ _build/
 /stamp-h1
 *.so
 /stdcompat__stubs.c
-/stdcompat__domain.mli.in
 /stdcompat_tests
 /tools/stdcompatpp.ml
 /tools/stdcompatpp
