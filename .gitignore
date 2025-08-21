@@ -12,8 +12,6 @@ _build/
 /tests.bytecode
 /tests.native
 /META
-/stdcompat.ml_byte
-/stdcompat.ml_native
 /.depend
 /stdcompat_*.ml
 /stdcompat_*.mli
