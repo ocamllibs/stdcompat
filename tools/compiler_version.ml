@@ -137,11 +137,15 @@ let known_versions =
 
 let is_known v = List.mem v known_versions
 
+let is_known_release {major; minor; _} =
+  List.exists (fun { major = major'; minor = minor'; _ } ->
+    major = major' && minor = minor') known_versions
+
 let is_development _ = false
 
 let make x y z extra_info =
   let v = mk x y z in
-  if is_known v then { v with extra_info } else raise Not_found
+  { v with extra_info }
 
 let to_string { major; minor; patch_level; extra_info } =
   let printer = Printf.sprintf in
