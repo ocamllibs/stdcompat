@@ -27,8 +27,8 @@ type options = {
   debug : bool;
 }
 
-let init_options () = {
-  compiler_version = Compiler_version.of_string Sys.ocaml_version;
+let init_options compiler_version = {
+  compiler_version;
   source_type = OCaml;
   debug = false;
 }
@@ -40,11 +40,11 @@ let dprintf options fmt =
   printer stderr fmt
 
 let set_compiler_version opts version =
-  let compiler_version =
-    try Compiler_version.of_string version with
-    _ -> unknown "compiler version" version
-  in
-  opts := { !opts with compiler_version  }
+  let compiler_version = Compiler_version.of_string version in
+  if Compiler_version.is_known compiler_version then
+    opts := { !opts with compiler_version  }
+  else
+    unknown "compiler version" version
 
 let set_source_type opts source_type =
   let source_type =
@@ -339,7 +339,14 @@ and c_lexer options state = parse
 {
 
 let main () =
-  let options = init_options () |> parse_commandline in
+  let compiler_version = Compiler_version.of_string Sys.ocaml_version in
+  let compiler_version =
+    if Compiler_version.is_known_release compiler_version then
+      compiler_version
+    else
+      List.hd (List.rev Compiler_version.known_versions)
+  in
+  let options = init_options compiler_version |> parse_commandline in
   let lexer = match options.source_type with
     | OCaml -> ocaml_lexer
     | C -> c_lexer
