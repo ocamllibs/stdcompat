@@ -59,6 +59,8 @@ module type S = sig
 
   module Domain : Stdcompat__domain_s.S
 
+  module Dynarray : Stdcompat__dynarray_s.S
+
   module Either : Stdcompat__either_s.S
 
   module Ephemeron : Stdcompat__ephemeron_s.S
