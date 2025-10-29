@@ -87,6 +87,7 @@ let v5_1_1 = mk 5 1 1
 let v5_2_0 = mk 5 2 0
 let v5_2_1 = mk 5 2 1
 let v5_3_0 = mk 5 3 0
+let v5_4_0 = mk 5 4 0
 
 let known_versions =
 [
@@ -133,6 +134,7 @@ let known_versions =
   v5_2_0;
   v5_2_1;
   v5_3_0;
+  v5_4_0;
 ]
 
 let is_known v = List.mem v known_versions

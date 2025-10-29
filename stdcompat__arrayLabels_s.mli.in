@@ -267,4 +267,8 @@ external unsafe_get : 'a array -> int -> 'a = "%array_unsafe_get"
 external unsafe_set : 'a array -> int -> 'a -> unit = "%array_unsafe_set"
 (** Alias for {!ArrayLabels.unsafe_set} *)
 
+(* OCaml 5.4 *)
+val equal : eq:('a -> 'a -> bool) -> 'a array -> 'a array -> bool
+val compare : cmp:('a -> 'a -> int) -> 'a array -> 'a array -> int
+
 end
