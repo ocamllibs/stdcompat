@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Setup OCaml
         uses: ocaml/setup-ocaml@v3
         with:
@@ -44,10 +44,11 @@ jobs:
           - 5.0.x
           - 5.1.x
           - 5.2.x
+          - 5.3.x
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Setup OCaml
         uses: ocaml/setup-ocaml@v3
         with:
