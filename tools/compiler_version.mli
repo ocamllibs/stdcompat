@@ -51,6 +51,7 @@ val v5_1_1 : t
 val v5_2_0 : t
 val v5_2_1 : t
 val v5_3_0 : t
+val v5_4_0 : t
 
 val known_versions : t list
 
