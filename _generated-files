@@ -27,6 +27,7 @@ stdcompat__filename_s.mli
 stdcompat__float_s.mli
 stdcompat__format_s.mli
 stdcompat__fun_s.mli
+stdcompat__generic_int_s.mli
 stdcompat__hashtbl_s.mli
 stdcompat__in_channel_s.mli
 stdcompat__int_s.mli
@@ -124,6 +125,7 @@ stdcompat__float.ml
 stdcompat__format.ml
 stdcompat__fun.ml
 stdcompat__hashtbl.ml
+stdcompat__generic_int.ml
 stdcompat__int.ml
 stdcompat__int32.ml
 stdcompat__int64.ml

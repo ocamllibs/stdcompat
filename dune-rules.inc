@@ -231,14 +231,6 @@
         (with-stdout-to stdcompat__fun_s.mli
           (run %{gen} --source-type ocaml)))))
 (rule
-  (targets stdcompat__generic_int.ml)
-  (deps
-    (:gen tools/stdcompatpp.exe) stdcompat__generic_int.ml.in)
-    (action
-      (with-stdin-from stdcompat__generic_int.ml.in
-        (with-stdout-to stdcompat__generic_int.ml
-          (run %{gen} --source-type ocaml)))))
-(rule
   (targets stdcompat__generic_int_s.mli)
   (deps
     (:gen tools/stdcompatpp.exe) stdcompat__generic_int_s.mli.in)
@@ -1021,6 +1013,14 @@
     (action
       (with-stdin-from stdcompat__hashtbl.ml.in
         (with-stdout-to stdcompat__hashtbl.ml
+          (run %{gen} --source-type ocaml)))))
+(rule
+  (targets stdcompat__generic_int.ml)
+  (deps
+    (:gen tools/stdcompatpp.exe) stdcompat__generic_int.ml.in)
+    (action
+      (with-stdin-from stdcompat__generic_int.ml.in
+        (with-stdout-to stdcompat__generic_int.ml
           (run %{gen} --source-type ocaml)))))
 (rule
   (targets stdcompat__int.ml)
