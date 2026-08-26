@@ -56,6 +56,8 @@ val known_versions : t list
 
 val is_known : t -> bool
 
+val is_known_release : t -> bool
+
 val is_development : t -> bool
 
 val major : t -> int
