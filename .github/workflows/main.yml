@@ -32,6 +32,11 @@ jobs:
         uses: actions/checkout@v5
       - name: Setup OCaml
         uses: ocaml/setup-ocaml@v3
+        # GCC 15 (ubuntu-latest is Ubuntu 26) defaults to C23, where the
+        # declarations without prototype of OCaml < 4.14.2 and of OCaml 5.0
+        # (caml/prims.h) take no argument: the compiler is built with C17.
+        env:
+          CC: gcc -std=gnu17
         with:
           ocaml-compiler: ${{ matrix.ocaml-compiler }}
       - name: Make stdcompat
