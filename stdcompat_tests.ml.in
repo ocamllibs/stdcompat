@@ -148,6 +148,16 @@ let test_mkdir_rmdir () =
     assert true;
   end
 
+(* The directory created by [Filename.temp_dir] with the default permissions
+   (0o700) can receive files. *)
+let test_temp_dir () =
+  let directory = Stdcompat.Filename.temp_dir "stdcompat" "" in
+  assert (Stdcompat.Sys.is_directory directory);
+  let file = Filename.concat directory "file" in
+  close_out (open_out file);
+  Sys.remove file;
+  Stdcompat.Sys.rmdir directory
+
 let test_set_to_seq_to_rev_seq () =
   let module M = Stdcompat.Set.Make (Stdcompat.Int) in
   let s = M.add 2 (M.add 1 (M.add 3 M.empty)) in
@@ -2241,6 +2251,7 @@ let tests () =
   testing "Set.filter_map" test_set_filter_map;
   testing "Map.filter_map" test_map_filter_map;
   testing "Sys.mkdir/Sys.rmdir" test_mkdir_rmdir;
+  testing "Filename.temp_dir" test_temp_dir;
   testing "Set.to_seq/to_rev_seq" test_set_to_seq_to_rev_seq;
   testing "Map.to_seq/to_rev_seq" test_map_to_seq_to_rev_seq;
   test_list_partition_map ();
