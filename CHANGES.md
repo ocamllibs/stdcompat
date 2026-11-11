@@ -4,6 +4,10 @@
 
 - Compatibility with OCaml 4.14.5, 5.5.1 and 5.5.2
 
+- Fix the default permissions of `Filename.temp_dir` (before OCaml 5.1):
+  0o700, as in the standard library, instead of 0o600, which did not allow
+  creating files in the directory
+
 # Version 20
 
 - Compatibility with OCaml 5.1 and 5.2
